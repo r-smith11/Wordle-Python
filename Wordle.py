@@ -1,7 +1,7 @@
 import random, sys, time
 
 color = sys.stdout.shell
-color.write("Welcome to Wordle! \nYou can begin guessing now!\n", "NORMAL")
+color.write("\nWelcome to Wordle! \nYou can begin guessing now!\n\n", "NORMAL")
 
 WORDLIST = []
 
