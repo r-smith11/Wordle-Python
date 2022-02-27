@@ -1,9 +1,20 @@
 import random, sys, time
 
 color = sys.stdout.shell
+color.write("Welcome to Wordle! \nYou can begin guessing now!\n", "NORMAL")
 
-WORDLIST = ["CIGAR", "SISSY", "DEBUT", "SQUID", "APPLE", "MARCH"]
-VALIDLIST = ["CIGAR", "SISSY", "DEBUT", "SQUID", "APPLE", "MARCH", "QUEEN", "THING", "PLEAT", "WORDS"]
+WORDLIST = []
+
+words = open("C:/Users/rsmit/Repos/Wordle-Python/words.txt", "r")
+valid_guesses = open("C:/Users/rsmit/Repos/Wordle-Python/valid_guesses.txt", "r")
+
+for line in words:
+    WORDLIST.append(str.rstrip(line))
+    
+valid_string = ""
+for line in valid_guesses:
+    valid_string += line
+VALIDLIST = valid_string.split(' ')
 
 def is_valid(guess):
     ''' Check for validity of input '''
